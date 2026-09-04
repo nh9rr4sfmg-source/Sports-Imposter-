@@ -12,7 +12,37 @@ label{display:block;text-align:left;color:#aab8ad;font-weight:800;margin-top:18p
 .hide{display:none}.role{font-size:34px;font-weight:900;margin:25px 0}.player{font-size:36px;font-weight:900;color:var(--a)}.pill{display:inline-block;background:#173526;padding:10px 15px;border-radius:999px;color:#cbd7ce;font-weight:800;margin:8px}
 .top{display:flex;justify-content:space-between;align-items:center}.dots{border:1px solid #315c47;border-radius:50%;padding:12px;font-weight:900}.stats{display:flex;justify-content:space-around;margin-top:20px;color:#a9b7ac}.stats b{display:block;color:white;font-size:28px}.vote{display:grid;grid-template-columns:1fr 1fr;gap:10px}.vote button{padding:14px;border-radius:14px;border:1px solid #315c47;background:#10291e;color:white;font-weight:800}
 footer{text-align:center;color:#718278;margin-top:35px;font-weight:700}@media(max-width:430px){h1{font-size:38px}h2{font-size:36px}.wrap{padding-top:20px}}
-</style></head><body><div class="wrap">
+</style>
+<style id="mobile-friendly-overrides">
+html,body{width:100%;max-width:100%;overflow-x:hidden;-webkit-text-size-adjust:100%;touch-action:manipulation}
+body{margin:0;min-height:100svh;padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right);padding-bottom:env(safe-area-inset-bottom)}
+*{box-sizing:border-box}
+img,video,canvas,svg{max-width:100%;height:auto}
+button,input,select,textarea{font:inherit}
+button,.btn,[role="button"]{min-height:48px;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+@media (max-width:700px){
+ body{font-size:16px}
+ .wrap,.container,main,.app,.screen,.panel,.content{width:100%!important;max-width:100%!important;margin-left:auto!important;margin-right:auto!important}
+ .wrap,.container,main,.app,.screen,.content{padding-left:14px!important;padding-right:14px!important}
+ h1{font-size:clamp(2rem,10vw,3.2rem)!important;line-height:.98!important;overflow-wrap:anywhere}
+ h2{font-size:clamp(1.5rem,7vw,2.3rem)!important;line-height:1.08!important}
+ p,.sub,.subtitle,.description{font-size:.98rem!important;line-height:1.45!important}
+ .grid,.sport-grid,.sports-grid,.cards,.card-grid{display:grid!important;grid-template-columns:1fr!important;gap:12px!important}
+ .card,.sport-card,.game-card,.panel{width:100%!important;max-width:100%!important;margin:0 auto!important;border-radius:18px!important}
+ .sport-card img,.card img,.ball-img,.sport-image{max-height:180px!important;object-fit:contain!important}
+ .actions,.buttons,.button-row,.controls,.row{display:flex!important;flex-wrap:wrap!important;gap:10px!important}
+ .actions>*,.buttons>*,.button-row>*,.controls>*{flex:1 1 100%!important;width:100%!important}
+ button,.btn{width:100%!important;min-height:52px!important;padding:14px 16px!important;border-radius:14px!important;font-size:1rem!important}
+ input,select,textarea{width:100%!important;min-height:48px;font-size:16px!important}
+ .modal,.dialog,.sheet{width:calc(100vw - 24px)!important;max-width:520px!important;max-height:calc(100svh - 24px)!important;overflow-y:auto!important}
+ footer{padding-bottom:calc(18px + env(safe-area-inset-bottom))!important;text-align:center}
+}
+@media (min-width:701px) and (max-width:1024px){
+ .grid,.sport-grid,.sports-grid,.cards,.card-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+</style>
+
+</head><body><div class="wrap">
 <section id="home"><div class="top"><div></div><div class="dots">•••</div></div><h1>SPORTS <span class="accent">IMPOSTER</span></h1><div class="sub">One phone. One mystery player. Find the imposter.</div>
 <div class="card"><h2>Choose your sport</h2><div class="muted">Pick a game and find the imposter.</div><div class="grid" id="sports" style="margin-top:22px"></div></div></section>
 <section id="landing" class="hide"><button class="sport" onclick="show('home')">← SPORTS</button><h1><span id="sportName"></span> <span class="accent">IMPOSTER</span></h1><div class="sub">One phone. One mystery player. Find the imposter.</div>
